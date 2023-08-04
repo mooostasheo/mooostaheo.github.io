@@ -1,0 +1,22 @@
+input {
+    border-radius: 25px;
+    height: 5vh;
+    width: 20vh;
+    font-size: x-large;
+    text-align: center;
+}
+
+button {
+    width: 15vh;
+    height: 4vh;
+    border-radius: 25px;
+    transition: .5s;
+}
+
+button:hover {
+    background-color: #999999;
+}
+
+p {
+    font-size: xxx-large;
+}

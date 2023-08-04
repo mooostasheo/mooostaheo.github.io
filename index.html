@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time Sheet Calculator</title>
+    <script>
+        function calculateHours() {
+            const startTimeInput = document.getElementById('start-time').value;
+            const endTimeInput = document.getElementById('end-time').value;
+
+            const startTimeHours = startTimeInput.substring(0, 2);
+            const startTimeMinutes = startTimeInput.substring(2);
+
+            const endTimeHours = endTimeInput.substring(0, 2);
+            const endTimeMinutes = endTimeInput.substring(2);
+
+            const start = new Date(2000, 0, 1, parseInt(startTimeHours), parseInt(startTimeMinutes));
+            const end = new Date(2000, 0, 1, parseInt(endTimeHours), parseInt(endTimeMinutes));
+
+            const diff = end - start;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('result').innerHTML = `${hours} hours ${minutes} minutes`;
+        }
+    </script>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body style="display: flex;flex-wrap: wrap;flex-direction: column;align-content: center;justify-content: center;align-items: center; background-color: #2e2e2e; font-family: Arial, Helvetica, sans-serif; color: white;">
+    <h1>Time Sheet Calculator</h1>
+    <label for="start-time">Start Time (hhmm):</label>
+    <input type="text" id="start-time" placeholder="e.g., 0715" required><br>
+
+    <label for="end-time">End Time (h:mm):</label>
+    <input type="text" id="end-time" placeholder="e.g., 1530" required><br>
+
+    <button onclick="calculateHours()">Calculate</button>
+
+    <p id="result"></p>
+</body>
+</html>
