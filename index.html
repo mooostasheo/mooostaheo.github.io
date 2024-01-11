@@ -22,6 +22,12 @@
 
             document.getElementById('result').innerHTML = `${hours} hours ${minutes} minutes`;
         }
+        addEventListner("keypress", logkey);
+            function logkey(e) {
+                if (e == 'Enter') {
+                    calculateHours()
+                }
+        }
     </script>
     <link rel="stylesheet" href="stylesheet.css">
 </head>
